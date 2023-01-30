@@ -7,7 +7,7 @@ public class IntellijShortCut {
 //    Alt+Insert ==> Generate
 //    ctrl+/ ==> single comment
 //    ctrl+shift+/ ==> single comment
-
+//      Ctrl+Alt+L = formater
 
 
 }
