@@ -27,7 +27,7 @@ public class EmployeeServiceImpl implements EmployeeServices {
 
 
     //List
-    //http:/localhost:8080/api/v1/employees
+    //http://localhost:8080/api/v1/employees
     @GetMapping("/employees")
     @Override
     public List<EmployeeDto> getAllEmployees() {
@@ -45,7 +45,7 @@ public class EmployeeServiceImpl implements EmployeeServices {
     //http:/localhost:8080/api/v1/employees/
     @PostMapping("/employees")
     @Override
-    public EmployeeDto creatEmployee(@RequestBody EmployeeDto employeeDto) {
+    public EmployeeDto createEmployee(@RequestBody EmployeeDto employeeDto) {
         EmployeeEntity employeeEntity= DtoToEntity(employeeDto);
         employeeRepository.save(employeeEntity);
         return employeeDto;
@@ -56,10 +56,10 @@ public class EmployeeServiceImpl implements EmployeeServices {
     //http:/localhost:8080/api/v1/employees/1
     @GetMapping("/employees/{id}")
     @Override
-    public ResponseEntity<EmployeeDto> getEmployeeById(@PathVariable Long id) throws Throwable {
+    public ResponseEntity<EmployeeDto> getEmployeeById(@PathVariable(name = "id") Long id) throws Throwable {
         EmployeeEntity employee = (EmployeeEntity) employeeRepository.findById(id)
                 .orElseThrow(()-> new ResourceNotFoundException("Employee not exist with id " + id));
-        EmployeeDto employeeDto = EntityToDto(employee);
+        EmployeeDto employeeDto = EntityToDto(employee); //model
         return ResponseEntity.ok(employeeDto);
     }
 
@@ -68,7 +68,7 @@ public class EmployeeServiceImpl implements EmployeeServices {
     //http:/localhost:8080/api/v1/employees
     @PutMapping("/employees/{id}")
     @Override
-    public ResponseEntity<EmployeeDto> updateEmployee(@PathVariable Long id,@RequestBody EmployeeDto employeeDetails) throws Throwable {
+    public ResponseEntity<EmployeeDto> updateEmployee(@PathVariable(name = "id") Long id,@RequestBody EmployeeDto employeeDetails) throws Throwable {
         EmployeeEntity employeeEntity = DtoToEntity(employeeDetails); //Model Mapper
         EmployeeEntity employee = (EmployeeEntity) employeeRepository.findById(id)
                 .orElseThrow(()-> new ResourceNotFoundException("Employee not exist with id " + id));
@@ -86,7 +86,7 @@ public class EmployeeServiceImpl implements EmployeeServices {
     //http:/localhost:8080/api/v1/employees/1
     @DeleteMapping("/employees/{id}")
     @Override
-    public ResponseEntity<Map<String, Boolean>> deleteEmployee(@PathVariable Long id) throws Throwable {
+    public ResponseEntity<Map<String, Boolean>> deleteEmployee(@PathVariable(name = "id") Long id) throws Throwable {
         EmployeeEntity employee = (EmployeeEntity) employeeRepository.findById(id)
                 .orElseThrow(()-> new ResourceNotFoundException("Employee not exist with id " + id));
         employeeRepository.delete(employee);
