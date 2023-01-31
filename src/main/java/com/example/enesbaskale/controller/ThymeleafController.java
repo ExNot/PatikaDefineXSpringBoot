@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public class ThymeleafController {
     //Optional: root{}
     //http://localhost:8080
     @GetMapping("/index")
-    public String index(){
+    public String index() {
         return "index";
     }
 
@@ -90,19 +91,37 @@ public class ThymeleafController {
 
         return "thymeleaf6";
     }
+
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //@PathVariable
     //Model Object göndermek
-    //http://localhost:8080/thymeleaf7/9
-    @GetMapping({"/thymeleaf7","/thymeleaf7/{id}"})
+    //http://localhost:8080/thymeleaf7/78
+    //http://localhost:8080/thymeleaf7/
+    @GetMapping({"/thymeleaf7", "/thymeleaf7/{id}"})
     public String getThymeleaf7ModelObject(Model model, @PathVariable(name = "id", required = false) Long id) {
-        if (id!= null){
+        if (id != null) {
             model.addAttribute("key_model1", "id: " + id);
 
-        }
-        else {
+        } else {
             model.addAttribute("key_model1", "id bulunamadı");
         }
         return "thymeleaf7";
+    }
+
+
+    //@RequestParam
+    //http://localhost:8080/thymeleaf8?id=4&name=EnesBaskale
+    @GetMapping({"/thymeleaf8"})
+    public String getThymeleaf8ModelObject(Model model,
+                                           @RequestParam(name = "id", required = false, defaultValue = "0") Long id,
+                                           @RequestParam(name = "name") String name) {
+        if (id != null) {
+            model.addAttribute("key_model1", "id: " + id + "name surname: " + name);
+
+        } else {
+            model.addAttribute("key_model1", "id bulunamadı");
+        }
+        return "thymeleaf8";
     }
 
 
