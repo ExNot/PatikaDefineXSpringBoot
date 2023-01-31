@@ -1,4 +1,4 @@
-package com.example.enesbaskale.repository;
+package com.example.enesbaskale.data.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
@@ -11,3 +11,4 @@ public interface EmployeeRepository extends CrudRepository {
 
 
 }
+

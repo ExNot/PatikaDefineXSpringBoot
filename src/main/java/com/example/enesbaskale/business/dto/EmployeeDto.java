@@ -1,4 +1,4 @@
-package com.example.enesbaskale.dto;
+package com.example.enesbaskale.business.dto;
 
 //DTO: Data Transfer Object
 

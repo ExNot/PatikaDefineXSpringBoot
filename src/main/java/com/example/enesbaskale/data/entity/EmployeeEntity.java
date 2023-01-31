@@ -1,6 +1,5 @@
-package com.example.enesbaskale.entity;
+package com.example.enesbaskale.data.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;

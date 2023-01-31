@@ -1,4 +1,4 @@
-package com.example.enesbaskale.entity;
+package com.example.enesbaskale.data.entity;
 
 import lombok.Getter;
 import lombok.Setter;
