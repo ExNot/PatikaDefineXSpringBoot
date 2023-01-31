@@ -1,4 +1,4 @@
-package com.example.enesbaskale.dto;
+package com.example.enesbaskale.tutorials.dto;
 
 import java.util.Date;
 

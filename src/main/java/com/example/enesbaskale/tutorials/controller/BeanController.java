@@ -1,7 +1,6 @@
-package com.example.enesbaskale.controller;
+package com.example.enesbaskale.tutorials.controller;
 
-import com.example.enesbaskale.bean.BeanConfig;
-import org.hibernate.service.spi.InjectService;
+import com.example.enesbaskale.tutorials.bean.BeanConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

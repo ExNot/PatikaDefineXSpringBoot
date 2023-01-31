@@ -1,8 +1,7 @@
-package com.example.enesbaskale.controller;
+package com.example.enesbaskale.tutorials.controller;
 
 
-import com.example.enesbaskale.dto.TeacherDto;
-import lombok.extern.java.Log;
+import com.example.enesbaskale.tutorials.dto.TeacherDto;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

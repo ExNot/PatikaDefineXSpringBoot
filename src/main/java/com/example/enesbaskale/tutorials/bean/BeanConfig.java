@@ -1,6 +1,6 @@
-package com.example.enesbaskale.bean;
+package com.example.enesbaskale.tutorials.bean;
 
-import com.example.enesbaskale.dto.BeanDto;
+import com.example.enesbaskale.tutorials.dto.BeanDto;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;

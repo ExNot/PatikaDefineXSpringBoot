@@ -1,4 +1,4 @@
-package com.example.enesbaskale.bean;
+package com.example.enesbaskale.tutorials.bean;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
